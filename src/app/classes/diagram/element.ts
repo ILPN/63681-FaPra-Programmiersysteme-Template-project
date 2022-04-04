@@ -35,11 +35,17 @@ export class Element {
     }
 
     private processMouseDown(event: MouseEvent) {
-        //this._svgElement.
+        if (this._svgElement === undefined) {
+            return;
+        }
+        this._svgElement.setAttribute('fill', 'red');
     }
 
     private processMouseUp(event: MouseEvent) {
-
+        if (this._svgElement === undefined) {
+            return;
+        }
+        this._svgElement.setAttribute('fill', 'black');
     }
 
 }

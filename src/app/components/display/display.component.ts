@@ -23,6 +23,7 @@ export class DisplayComponent implements OnDestroy {
 
         this._sub  = this._displayService.diagram$.subscribe(diagram => {
             this._diagram = diagram;
+            this._layoutService.layout(this._diagram);
             this.draw();
         });
     }
