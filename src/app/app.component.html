@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <!--  Header  -->
+    <a href="https://www.fernuni-hagen.de/ilovepetrinets/"><h1>I <span class="red">❤</span> Petri Nets</h1></a>
+    <h2>Show a petri net, show a run.</h2>
+
+    <!--    Main content    -->
+    <app-display class="padding full-size"></app-display>
+
+
+    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+        <app-template-button buttonText="Left button" buttonIcon="lightbulb"></app-template-button>
+        <mat-form-field appearance="outline"
+                        class="textarea">
+            <mat-label>Source file</mat-label>
+            <textarea matInput
+                      cdkTextareaAutosize
+                      cdkAutosizeMinRows="10"
+                      cdkAutosizeMaxRows="20"
+                      [formControl]="textareaFc"></textarea>
+        </mat-form-field>
+        <app-template-button buttonText="Right button" buttonIcon="grade"></app-template-button>
+    </div>
+
+    <!--  Footer  -->
+    <hr>
+    <app-footer></app-footer>
+</div>
