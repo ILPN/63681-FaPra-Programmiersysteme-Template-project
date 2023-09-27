@@ -5,19 +5,11 @@
     border-width: 5px;
     border-style: solid;
     margin-top: 14px;
+
+    font-size: 50px;
+    color: red;
 }
 
 .mouse-hover {
     border-color: black;
-}
-
-.larger-icon {
-    font-size: 40px;
-    width: 40px;
-    height: 40px;
-    color: dimgrey;
-}
-
-.mouse-hover .larger-icon {
-    color: black;
 }

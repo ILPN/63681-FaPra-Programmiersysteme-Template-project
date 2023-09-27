@@ -10,15 +10,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FooterComponent} from './components/footer/footer.component';
-import {TemplateButtonComponent} from './components/template-button/template-button.component';
+import {ExampleFileComponent} from './components/example-file/example-file.component';
 import {APP_BASE_HREF, PlatformLocation} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
         AppComponent,
         DisplayComponent,
         FooterComponent,
-        TemplateButtonComponent
+        ExampleFileComponent
     ],
     imports: [
         BrowserModule,
@@ -29,6 +30,7 @@ import {APP_BASE_HREF, PlatformLocation} from "@angular/common";
         MatButtonModule,
         MatIconModule,
         ReactiveFormsModule,
+        HttpClientModule,
     ],
     providers: [
         {

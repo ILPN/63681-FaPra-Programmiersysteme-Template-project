@@ -1,24 +1,29 @@
 <div fxLayout="column" fxLayoutAlign="start stretch">
     <!--  Header  -->
     <a href="https://www.fernuni-hagen.de/ilovepetrinets/"><h1>I <span class="red">❤</span> Petri Nets</h1></a>
-    <h2>Subtitle</h2>
+    <h2>
+        Fachpraktikum Programmiersysteme WiSe23/24 by<br>
+        ..., ..., ..., ... and ...
+    </h2>
 
     <!--    Main content    -->
-    <app-display class="padding full-size"></app-display>
+    <app-display class="padding full-size" (fileContent)="processSourceChange($event)"></app-display>
 
 
     <div fxLayout="row" fxLayoutAlign="space-evenly start">
-        <app-template-button buttonText="Left button" buttonIcon="lightbulb"></app-template-button>
+        <app-example-file title="Example 1" link="assets/example1.txt"></app-example-file>
+
+        <app-example-file title="Example 2" link="assets/example2.txt"></app-example-file>
+
         <mat-form-field appearance="outline"
                         class="textarea">
-            <mat-label>Source file</mat-label>
+            <mat-label>File content</mat-label>
             <textarea matInput
                       cdkTextareaAutosize
                       cdkAutosizeMinRows="10"
                       cdkAutosizeMaxRows="20"
                       [formControl]="textareaFc"></textarea>
         </mat-form-field>
-        <app-template-button buttonText="Right button" buttonIcon="grade"></app-template-button>
     </div>
 
     <!--  Footer  -->
