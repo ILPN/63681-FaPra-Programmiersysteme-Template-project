@@ -11,6 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FooterComponent} from './components/footer/footer.component';
 import {TemplateButtonComponent} from './components/template-button/template-button.component';
+import {APP_BASE_HREF, PlatformLocation} from "@angular/common";
 
 @NgModule({
     declarations: [
@@ -29,7 +30,13 @@ import {TemplateButtonComponent} from './components/template-button/template-but
         MatIconModule,
         ReactiveFormsModule,
     ],
-    providers: [],
+    providers: [
+        {
+            provide: APP_BASE_HREF,
+            useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
+            deps: [PlatformLocation]
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
