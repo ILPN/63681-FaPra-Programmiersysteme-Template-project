@@ -8,7 +8,7 @@ import {Diagram} from '../../classes/diagram/diagram';
 @Component({
     selector: 'app-display',
     templateUrl: './display.component.html',
-    styleUrls: ['./display.component.scss']
+    styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnDestroy {
 
