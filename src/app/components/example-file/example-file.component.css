@@ -1,15 +1,41 @@
-.interactive-square {
-    width: 100px;
-    height: 100px;
-    border-color: dimgrey;
-    border-width: 5px;
-    border-style: solid;
-    margin-top: 14px;
+.border {
+    width: 380px;
+    margin: 10px;
+    border: 2px solid grey;
+    padding: 5px;
+    float: left;
+}
 
-    font-size: 50px;
+.border:hover {
+    border-color: black;
+}
+
+.square {
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+
+    font-size: 30px;
     color: red;
 }
 
-.mouse-hover {
-    border-color: black;
+.description {
+    margin: 5px;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: start;
+    padding-bottom: 2px;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.description-min-height {
+    min-height: 3em;
 }

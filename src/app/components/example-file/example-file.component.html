@@ -1,10 +1,14 @@
-<div fxLayout="column" fxLayoutAlign="start center">
-    {{title}}
-    <div class="interactive-square" fxLayout="row" fxLayoutAlign="center center"
-         draggable="true"
-         (mouseenter)="hoverStart($event)"
-         (mouseleave)="hoverEnd($event)"
-         (dragstart)="addFileLink($event)">
+<div class="border" fxLayout="row" fxLayoutAlign="start top"
+     draggable="true"
+     (mouseenter)="hoverStart($event)"
+     (mouseleave)="hoverEnd($event)"
+     (dragstart)="addFileLink($event)">
+    <div class="square" fxLayout="row" fxLayoutAlign="center center" fxFlex="nogrow">
         ♥
+    </div>
+    <div class="description" fxLayout="column" fxLayoutAlign="top center" fxFlex>
+        <span>{{title}}</span>
+        <hr class="width100">
+        <span class="description-min-height">{{description}}</span>
     </div>
 </div>

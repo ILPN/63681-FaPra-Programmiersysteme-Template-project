@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+    {{title}}
+    <div class="interactive-square" fxLayout="row" fxLayoutAlign="center center"
+         (click)="processMouseClick($event)"
+         (mouseenter)="hoverStart($event)"
+         (mouseleave)="hoverEnd($event)">
+        ♥
+    </div>
+</div>

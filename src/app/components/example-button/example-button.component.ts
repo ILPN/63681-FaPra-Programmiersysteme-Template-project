@@ -1,17 +1,15 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-    selector: 'app-example-file',
-    templateUrl: './example-file.component.html',
-    styleUrls: ['./example-file.component.css']
+    selector: 'app-example-button',
+    templateUrl: './example-button.component.html',
+    styleUrls: ['./example-button.component.css']
 })
-export class ExampleFileComponent {
+export class ExampleButtonComponent {
 
     public static readonly META_DATA_CODE = 'drag-file-location';
 
     @Input() title: string | undefined;
-    @Input() description: string | undefined;
-    @Input({required: true}) link: string = '';
 
     constructor() {
     }
@@ -33,11 +31,8 @@ export class ExampleFileComponent {
         target.classList.remove('mouse-hover');
     }
 
-    addFileLink(e: DragEvent) {
-        console.log('drag start', e);
-
-        e.dataTransfer!.effectAllowed = 'link';
-        e.dataTransfer!.setData(ExampleFileComponent.META_DATA_CODE, this.link);
+    processMouseClick(e: MouseEvent) {
+        console.log(`Template button "${this.title}" clicked`, e);
     }
 
 }
