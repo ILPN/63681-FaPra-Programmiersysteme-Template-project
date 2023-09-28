@@ -1,7 +1,6 @@
 import {Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
 import {DisplayService} from '../../services/display.service';
 import {catchError, of, Subscription, take} from 'rxjs';
-import {LayoutService} from '../../services/layout.service';
 import {SvgService} from '../../services/svg.service';
 import {Diagram} from '../../classes/diagram/diagram';
 import {ExampleFileComponent} from "../example-file/example-file.component";
@@ -22,8 +21,7 @@ export class DisplayComponent implements OnDestroy {
     private _sub: Subscription;
     private _diagram: Diagram | undefined;
 
-    constructor(private _layoutService: LayoutService,
-                private _svgService: SvgService,
+    constructor(private _svgService: SvgService,
                 private _displayService: DisplayService,
                 private _fileReaderService: FileReaderService,
                 private _http: HttpClient) {
@@ -34,7 +32,6 @@ export class DisplayComponent implements OnDestroy {
             console.log('new diagram');
 
             this._diagram = diagram;
-            this._layoutService.layout(this._diagram);
             this.draw();
         });
     }

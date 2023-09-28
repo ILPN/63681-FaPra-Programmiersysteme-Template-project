@@ -1,11 +1,17 @@
 export class Element {
+    private readonly _id: string;
     private _x: number;
     private _y: number;
     private _svgElement: SVGElement | undefined;
 
-    constructor() {
+    constructor(id: string) {
+        this._id = id;
         this._x = 0;
         this._y = 0;
+    }
+
+    get id(): string {
+        return this._id;
     }
 
     get x(): number {

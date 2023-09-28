@@ -10,7 +10,7 @@ export class DisplayService implements OnDestroy {
     private _diagram$: BehaviorSubject<Diagram>;
 
     constructor() {
-        this._diagram$ = new BehaviorSubject<Diagram>(new Diagram());
+        this._diagram$ = new BehaviorSubject<Diagram>(new Diagram([]));
     }
 
     ngOnDestroy(): void {
