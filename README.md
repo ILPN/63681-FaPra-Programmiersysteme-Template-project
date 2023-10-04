@@ -30,3 +30,12 @@ Vereinfacht die Arbeit mit CSS `flex-box` Eigenschaften.
 
 Vereinfacht die Verarbeitung von asynchron auftauchenden Ereignissen. 
 * [Dokumentation](https://rxjs.dev/guide/overview)
+
+## Petri-Netz Dateiformat
+
+Sie finden ein Beispiel .json Petri-Netz Datei in dem `assets` Ordner - [src/assets/example.json](./src/assets/example.json)
+
+Das Projekt enthält auch drei Referenzmodelle die dasselbe Petri-Netz in anderen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models). Die Dateien kann man mit folgenden Tools öffnen:
+* ILPN Datei - die [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/petrinets/index.html) Webseite
+* WoPeD Datei - das [WoPeD Tool](https://woped.dhbw-karlsruhe.de/?page_id=22)
+* Petriflow Datei - das [Netgrif Application Builder](https://builder.netgrif.com/modeler)
