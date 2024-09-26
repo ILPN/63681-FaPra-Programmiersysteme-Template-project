@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "fapra-template:build:production"
+              "buildTarget": "fapra-template:build:production"
             },
             "development": {
-              "browserTarget": "fapra-template:build:development"
+              "buildTarget": "fapra-template:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fapra-template:build"
+            "buildTarget": "fapra-template:build"
           }
         },
         "test": {
