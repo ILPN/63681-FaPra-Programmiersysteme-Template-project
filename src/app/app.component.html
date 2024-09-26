@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutAlign="start stretch">
+<div class="flexColumnAlignStartStretch">
     <!--  Header  -->
-    <div fxLayout="row" fxLayoutAlign="center center">
+    <div class="flexRowAlignCenterCenter">
         <a href="https://www.fernuni-hagen.de/ilovepetrinets/"><h1>I <span class="red">❤</span> Petri Nets</h1></a>
     </div>
     <h2>
@@ -12,7 +12,7 @@
     <app-display class="padding full-size" (fileContent)="processSourceChange($event)"></app-display>
 
 
-    <div fxLayout="row" fxLayoutAlign="space-evenly start">
+    <div class="flexRowAlignSpaceEvenlyStart">
         <app-example-button title="Button"></app-example-button>
 
         <app-example-file title="File" link="assets/example.json" description="An example .json Petri net"></app-example-file>

@@ -13,3 +13,17 @@
 .mouse-hover {
     border-color: black;
 }
+
+.flexColumnAlignStartCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flexRowAlignCenterCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

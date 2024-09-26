@@ -31,3 +31,24 @@ hr {
     margin-bottom: 30px;
     width: 100%;
 }
+
+.flexColumnAlignStartStretch {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.flexRowAlignCenterCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexRowAlignSpaceEvenlyStart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
