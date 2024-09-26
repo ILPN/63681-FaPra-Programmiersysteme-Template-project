@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "ng build --base-href /ilovepetrinets/fapra/wise23/TODO/",
+    "build-prod": "ng build --base-href /ilovepetrinets/fapra/wise24/TODO/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
