@@ -1,13 +1,17 @@
 # Codegerüst
 63681 Fachpraktikum Programmiersysteme
 
-## Umgebung
 
-Um den Codegerüst zum Laufen zu bringen, muss man `Node.js` und `npm` installieren. Das Projekt basiert auf Angular 16.
+## Entwicklungsumgebung
 
-Die Liste von kompatiblen Versionen findet man [hier](https://angular.io/guide/versions). Offizielle Angular Anweisungen zur Entwicklungsumgebung findet man [hier](https://angular.io/guide/setup-local).
+Um den Codegerüst zum Laufen zu bringen, brauchen Sie die Laufzeitumgebung `Node.js`. Das Projekt basiert auf Angular 18.
 
-## Bibliotheken
+Die Liste von kompatiblen `Node.js` Versionen finden Sie [hier](https://angular.dev/reference/versions). Offizielle Angular Anweisungen zur Einrichtung der Entwicklungsumgebung finden Sie [hier](https://angular.dev/tools/cli/setup-local).
+
+
+## Dokumentation
+
+Die Seitenelementen sind überwiegend mithilfe von CSS Flexbox ausgerichtet. Hilfreiche Unterlagen zum layouten mit Flexbox finden Sie [hier](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 Das Projekt enthält die folgenden Bibliotheken:
 
@@ -21,21 +25,21 @@ Ermöglicht durch die `<mat-icon>` Komponente alle Material Ikonen zu nutzen.
 * [Dokumentation](https://material.angular.io/components/icon/overview)
 * [Liste von Ikonen](https://fonts.google.com/icons)
 
-### Angular Flex Layout
-
-Vereinfacht die Arbeit mit CSS `flex-box` Eigenschaften.
-* [Demo](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
-
 ### RxJs
 
 Vereinfacht die Verarbeitung von asynchron auftauchenden Ereignissen. 
-* [Dokumentation](https://rxjs.dev/guide/overview)
+* [Dokumentation](https://rxjs.dev/guide/overview) 
+
 
 ## Petri-Netz Dateiformat
 
-Sie finden ein Beispiel .json Petri-Netz Datei in dem `assets` Ordner - [src/assets/example.json](./src/assets/example.json)
+Das Projekt enthält zwei Referenzmodelle die dasselbe Petri-Netz in unterschiedlichen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models).
+* `ilpn_reference_model.json` können Sie mit einem beliebigen Modul aus FaPra WiSe 2023/24 der [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/) Website öffnen
+* `woped_reference_model.pnml` können Sie mit dem [Workflow Petri Net Designer](https://woped.dhbw-karlsruhe.de/?page_id=22) öffnen
 
-Das Projekt enthält auch drei Referenzmodelle die dasselbe Petri-Netz in anderen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models). Die Dateien kann man mit folgenden Tools öffnen:
-* ILPN Datei - die [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/petrinets/index.html) Webseite
-* WoPeD Datei - das [Workflow Petri Net Designer](https://woped.dhbw-karlsruhe.de/?page_id=22)
-* Petriflow Datei - das [Netgrif Application Builder](https://builder.netgrif.com/modeler)
+
+## Inductive miner
+
+Der [Inductive miner visualizer](https://im-viz.informatik.uni-mannheim.de/) der Uni Mannheim führt den Inductive miner schrittweise durch.
+
+Eine weitere Implementierung des Inductive miners finden Sie auch im [ProM](https://promtools.org/) unter dem Namen "Mine Petri net with Inductive Miner".

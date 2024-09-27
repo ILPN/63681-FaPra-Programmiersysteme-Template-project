@@ -39,3 +39,33 @@
 .description-min-height {
     min-height: 3em;
 }
+
+.flexRowAlignStartTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flexRowAlignCenterCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumnAlignTopCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.itemNoGrow {
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
+.itemGrow {
+    flex-grow: 1;
+}

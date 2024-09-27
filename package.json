@@ -5,31 +5,30 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "ng build --base-href /ilovepetrinets/fapra/wise23/TODO/",
+    "build-prod": "ng build --base-href /ilovepetrinets/fapra/wise24/TODO/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.2.0",
-    "@angular/cdk": "~16.2.5",
-    "@angular/common": "^16.2.0",
-    "@angular/compiler": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/flex-layout": "^15.0.0-beta.42",
-    "@angular/forms": "^16.2.0",
-    "@angular/material": "~16.2.5",
-    "@angular/platform-browser": "^16.2.0",
-    "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0",
+    "@angular/animations": "^18.2.6",
+    "@angular/cdk": "~18.2.6",
+    "@angular/common": "^18.2.6",
+    "@angular/compiler": "^18.2.6",
+    "@angular/core": "^18.2.6",
+    "@angular/forms": "^18.2.6",
+    "@angular/material": "~18.2.6",
+    "@angular/platform-browser": "^18.2.6",
+    "@angular/platform-browser-dynamic": "^18.2.6",
+    "@angular/router": "^18.2.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.4",
-    "@angular/cli": "^16.2.4",
-    "@angular/compiler-cli": "^16.2.0",
+    "@angular-devkit/build-angular": "^18.2.6",
+    "@angular/cli": "^18.2.6",
+    "@angular/compiler-cli": "^18.2.6",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -37,6 +36,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.1.3"
+    "typescript": "~5.4.5"
   }
 }
