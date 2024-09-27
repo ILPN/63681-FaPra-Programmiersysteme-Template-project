@@ -1,1 +1,0 @@
-<A,C,D,H>1;<A,G,E,F,H>1;<A,E,G,F,H>1;<A,E,F,G,H>1;<A,C,D,L,D,H>1;<A,C,D,L,D,L,D,H>1;
