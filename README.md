@@ -33,13 +33,13 @@ Vereinfacht die Verarbeitung von asynchron auftauchenden Ereignissen.
 
 ## Petri-Netz Dateiformat
 
-Das Projekt enthält zwei Referenzmodelle die dasselbe Petri-Netz in unterschiedlichen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models). Die Dateien kann man mit folgenden Tools öffnen:
-* ILPN `.json` Datei - mit beliebigem Modul aus FaPra WiSe 2023/24 der [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/) Website
-* WoPeD Datei - mit dem [Workflow Petri Net Designer](https://woped.dhbw-karlsruhe.de/?page_id=22)
+Das Projekt enthält zwei Referenzmodelle die dasselbe Petri-Netz in unterschiedlichen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models).
+* `ilpn_reference_model.json` können Sie mit einem beliebigen Modul aus FaPra WiSe 2023/24 der [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/) Website öffnen
+* `woped_reference_model.pnml` können Sie mit dem [Workflow Petri Net Designer](https://woped.dhbw-karlsruhe.de/?page_id=22) öffnen
 
 
 ## Inductive miner
 
-[Inductive miner visualizer](https://im-viz.informatik.uni-mannheim.de/) der Uni Mannheim
+Der [Inductive miner visualizer](https://im-viz.informatik.uni-mannheim.de/) der Uni Mannheim führt den Inductive miner schrittweise durch.
 
-Eine Implementierung des Inductive miners finden Sie auch im [ProM](https://promtools.org/) unter dem Namen "Mine Petri net with Inductive Miner"
+Eine weitere Implementierung des Inductive miners finden Sie auch im [ProM](https://promtools.org/) unter dem Namen "Mine Petri net with Inductive Miner".
