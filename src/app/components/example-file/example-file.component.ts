@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 
 @Component({
     selector: 'app-example-file',
@@ -9,9 +9,9 @@ export class ExampleFileComponent {
 
     public static readonly META_DATA_CODE = 'drag-file-location';
 
-    @Input() title: string | undefined;
-    @Input() description: string | undefined;
-    @Input({required: true}) link: string = '';
+    readonly title = input<string>();
+    readonly description = input<string>();
+    readonly link = input.required<string>();
 
     constructor() {
     }
@@ -37,7 +37,7 @@ export class ExampleFileComponent {
         console.log('drag start', e);
 
         e.dataTransfer!.effectAllowed = 'link';
-        e.dataTransfer!.setData(ExampleFileComponent.META_DATA_CODE, this.link);
+        e.dataTransfer!.setData(ExampleFileComponent.META_DATA_CODE, this.link());
     }
 
 }
