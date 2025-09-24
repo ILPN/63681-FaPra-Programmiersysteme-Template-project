@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, output, ViewChild} from '@angular/core';
 import {DisplayService} from '../../services/display.service';
 import {catchError, of, Subscription, take} from 'rxjs';
 import {SvgService} from '../../services/svg.service';
@@ -16,7 +16,7 @@ export class DisplayComponent implements OnDestroy {
 
     @ViewChild('drawingArea') drawingArea: ElementRef<SVGElement> | undefined;
 
-    @Output('fileContent') fileContent: EventEmitter<string>;
+    readonly fileContent = output<string>();
 
     private _sub: Subscription;
     private _diagram: Diagram | undefined;
@@ -25,8 +25,6 @@ export class DisplayComponent implements OnDestroy {
                 private _displayService: DisplayService,
                 private _fileReaderService: FileReaderService,
                 private _http: HttpClient) {
-
-        this.fileContent = new EventEmitter<string>();
 
         this._sub = this._displayService.diagram$.subscribe(diagram => {
             console.log('new diagram');
@@ -38,7 +36,6 @@ export class DisplayComponent implements OnDestroy {
 
     ngOnDestroy(): void {
         this._sub.unsubscribe();
-        this.fileContent.complete();
     }
 
     public processDropEvent(e: DragEvent) {
