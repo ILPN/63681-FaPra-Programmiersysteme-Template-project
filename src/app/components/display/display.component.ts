@@ -5,7 +5,7 @@ import {SvgService} from '../../services/svg.service';
 import {Diagram} from '../../classes/diagram/diagram';
 import {ExampleFileComponent} from "../example-file/example-file.component";
 import {FileReaderService} from "../../services/file-reader.service";
-import { HttpClient } from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'app-display',
@@ -28,7 +28,7 @@ export class DisplayComponent implements OnDestroy {
 
         this.fileContent = new EventEmitter<string>();
 
-        this._sub  = this._displayService.diagram$.subscribe(diagram => {
+        this._sub = this._displayService.diagram$.subscribe(diagram => {
             console.log('new diagram');
 
             this._diagram = diagram;
@@ -59,7 +59,7 @@ export class DisplayComponent implements OnDestroy {
     }
 
     private fetchFile(link: string) {
-        this._http.get(link,{
+        this._http.get(link, {
             responseType: 'text'
         }).pipe(
             catchError(err => {
