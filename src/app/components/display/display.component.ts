@@ -10,8 +10,7 @@ import { HttpClient } from "@angular/common/http";
 @Component({
     selector: 'app-display',
     templateUrl: './display.component.html',
-    styleUrls: ['./display.component.css'],
-    standalone: false
+    styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnDestroy {
 

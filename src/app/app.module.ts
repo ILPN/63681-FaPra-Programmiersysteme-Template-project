@@ -15,20 +15,17 @@ import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
 import {ExampleButtonComponent} from "./components/example-button/example-button.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        DisplayComponent,
-        FooterComponent,
-        ExampleFileComponent,
-        ExampleButtonComponent,
-    ],
+    declarations: [AppComponent],
     bootstrap: [AppComponent], imports: [BrowserModule,
         BrowserAnimationsModule,
         MatFormFieldModule,
         MatInputModule,
         MatButtonModule,
         MatIconModule,
-        ReactiveFormsModule], providers: [
+        ReactiveFormsModule, DisplayComponent,
+        FooterComponent,
+        ExampleFileComponent,
+        ExampleButtonComponent], providers: [
         {
             provide: APP_BASE_HREF,
             useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),

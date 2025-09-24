@@ -3,8 +3,7 @@ import {Component, Input} from '@angular/core';
 @Component({
     selector: 'app-example-file',
     templateUrl: './example-file.component.html',
-    styleUrls: ['./example-file.component.css'],
-    standalone: false
+    styleUrls: ['./example-file.component.css']
 })
 export class ExampleFileComponent {
 
