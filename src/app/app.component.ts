@@ -1,13 +1,30 @@
 import {Component} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {ParserService} from './services/parser.service';
 import {DisplayService} from './services/display.service';
+import {DisplayComponent} from './components/display/display.component';
+import {ExampleButtonComponent} from './components/example-button/example-button.component';
+import {ExampleFileComponent} from './components/example-file/example-file.component';
+import {MatFormField, MatLabel} from '@angular/material/form-field';
+import {MatInput} from '@angular/material/input';
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {FooterComponent} from './components/footer/footer.component';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    standalone: false
+    imports: [
+        DisplayComponent,
+        ExampleButtonComponent,
+        ExampleFileComponent,
+        MatFormField,
+        MatLabel,
+        MatInput,
+        CdkTextareaAutosize,
+        ReactiveFormsModule,
+        FooterComponent,
+    ]
 })
 export class AppComponent {
 
