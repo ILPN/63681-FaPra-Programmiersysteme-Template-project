@@ -1,4 +1,4 @@
-export class Element {
+export class DiagramNode {
     private readonly _id: string;
     private _x: number;
     private _y: number;

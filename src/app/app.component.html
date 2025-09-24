@@ -4,7 +4,7 @@
         <a href="https://www.fernuni-hagen.de/ilovepetrinets/"><h1>I <span class="red">❤</span> Petri Nets</h1></a>
     </div>
     <h2>
-        <i>Fachpraktikum Programmiersysteme WiSe24/25</i> by<br>
+        <i>Fachpraktikum Programmiersysteme WiSe25/26</i> by<br>
         ..., ..., ..., ... and ...
     </h2>
 
@@ -13,12 +13,17 @@
 
 
     <div class="flexRowAlignSpaceEvenlyStart">
-        <app-example-button title="Button"></app-example-button>
+        <div class="buttonWrapperWidth flexColumnAlignStartCenter">
+            <app-example-button title="Button" (buttonPressed)="processButtonClick()"></app-example-button>
+
+            @if (buttonClickCount() > 0) {
+                Number of clicks: {{buttonClickCount()}}!
+            }
+        </div>
 
         <app-example-file title="File" link="assets/example.json" description="An example .json Petri net"></app-example-file>
 
-        <mat-form-field appearance="outline"
-                        class="textarea">
+        <mat-form-field appearance="outline">
             <mat-label>File content</mat-label>
             <textarea matInput
                       cdkTextareaAutosize

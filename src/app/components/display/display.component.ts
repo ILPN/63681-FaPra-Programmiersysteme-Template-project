@@ -1,36 +1,35 @@
-import {Component, ElementRef, OnDestroy, output, ViewChild} from '@angular/core';
+import {Component, OnDestroy, output, signal} from '@angular/core';
 import {DisplayService} from '../../services/display.service';
 import {catchError, of, Subscription, take} from 'rxjs';
-import {SvgService} from '../../services/svg.service';
 import {Diagram} from '../../classes/diagram/diagram';
 import {ExampleFileComponent} from "../example-file/example-file.component";
 import {FileReaderService} from "../../services/file-reader.service";
 import {HttpClient} from "@angular/common/http";
+import {SvgNodeComponent} from "./svg-node/svg-node.component";
 
 @Component({
     selector: 'app-display',
     templateUrl: './display.component.html',
+    imports: [
+        SvgNodeComponent
+    ],
     styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnDestroy {
 
-    @ViewChild('drawingArea') drawingArea: ElementRef<SVGElement> | undefined;
-
     readonly fileContent = output<string>();
 
-    private _sub: Subscription;
-    private _diagram: Diagram | undefined;
+    readonly diagram = signal<Diagram | undefined>(undefined);
 
-    constructor(private _svgService: SvgService,
-                private _displayService: DisplayService,
+    private _sub: Subscription;
+
+    constructor(private _displayService: DisplayService,
                 private _fileReaderService: FileReaderService,
                 private _http: HttpClient) {
 
         this._sub = this._displayService.diagram$.subscribe(diagram => {
             console.log('new diagram');
-
-            this._diagram = diagram;
-            this.draw();
+            this.diagram.set(diagram)
         });
     }
 
@@ -83,29 +82,5 @@ export class DisplayComponent implements OnDestroy {
             return;
         }
         this.fileContent.emit(content);
-    }
-
-    private draw() {
-        if (this.drawingArea === undefined) {
-            console.debug('drawing area not ready yet')
-            return;
-        }
-
-        this.clearDrawingArea();
-        const elements = this._svgService.createSvgElements(this._displayService.diagram);
-        for (const element of elements) {
-            this.drawingArea.nativeElement.appendChild(element);
-        }
-    }
-
-    private clearDrawingArea() {
-        const drawingArea = this.drawingArea?.nativeElement;
-        if (drawingArea?.childElementCount === undefined) {
-            return;
-        }
-
-        while (drawingArea.childElementCount > 0) {
-            drawingArea.removeChild(drawingArea.lastChild as ChildNode);
-        }
     }
 }

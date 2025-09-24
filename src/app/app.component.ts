@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, signal} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {ParserService} from './services/parser.service';
 import {DisplayService} from './services/display.service';
@@ -29,6 +29,7 @@ import {FooterComponent} from './components/footer/footer.component';
 export class AppComponent {
 
     public textareaFc: FormControl;
+    public buttonClickCount = signal(0);
 
     constructor(private _parserService: ParserService,
                 private _displayService: DisplayService) {
@@ -43,5 +44,9 @@ export class AppComponent {
         if (result !== undefined) {
             this._displayService.display(result);
         }
+    }
+
+    public processButtonClick() {
+        this.buttonClickCount.set(this.buttonClickCount() + 1);
     }
 }
