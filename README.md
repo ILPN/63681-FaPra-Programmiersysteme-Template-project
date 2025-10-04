@@ -4,7 +4,7 @@
 
 ## Entwicklungsumgebung
 
-Um den Codegerüst zum Laufen zu bringen, brauchen Sie die Laufzeitumgebung `Node.js`. Das Projekt basiert auf Angular 18.
+Um den Codegerüst zum Laufen zu bringen, brauchen Sie die Laufzeitumgebung `Node.js`. Das Projekt basiert auf Angular 20.
 
 Die Liste von kompatiblen `Node.js` Versionen finden Sie [hier](https://angular.dev/reference/versions). Offizielle Angular Anweisungen zur Einrichtung der Entwicklungsumgebung finden Sie [hier](https://angular.dev/tools/cli/setup-local).
 
@@ -36,10 +36,3 @@ Vereinfacht die Verarbeitung von asynchron auftauchenden Ereignissen.
 Das Projekt enthält zwei Referenzmodelle die dasselbe Petri-Netz in unterschiedlichen Formaten enthalten. Alle Referenzdateien befinden sich unter [src/reference-models](./src/reference-models).
 * `ilpn_reference_model.json` können Sie mit einem beliebigen Modul aus FaPra WiSe 2023/24 der [I ❤ Petri Nets](https://www.fernuni-hagen.de/ilovepetrinets/) Website öffnen
 * `woped_reference_model.pnml` können Sie mit dem [Workflow Petri Net Designer](https://woped.dhbw-karlsruhe.de/?page_id=22) öffnen
-
-
-## Inductive miner
-
-Der [Inductive miner visualizer](https://im-viz.informatik.uni-mannheim.de/) der Uni Mannheim führt den Inductive miner schrittweise durch.
-
-Eine weitere Implementierung des Inductive miners finden Sie auch im [ProM](https://promtools.org/) unter dem Namen "Mine Petri net with Inductive Miner".
