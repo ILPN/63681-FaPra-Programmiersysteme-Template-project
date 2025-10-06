@@ -52,3 +52,14 @@ hr {
     justify-content: space-evenly;
     align-items: flex-start;
 }
+
+.flexColumnAlignStartCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.buttonWrapperWidth {
+    width: 25em;
+}

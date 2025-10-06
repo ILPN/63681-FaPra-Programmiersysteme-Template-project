@@ -1,44 +1,40 @@
-import {Component, ElementRef, EventEmitter, OnDestroy, Output, ViewChild} from '@angular/core';
+import {Component, OnDestroy, output, signal} from '@angular/core';
 import {DisplayService} from '../../services/display.service';
 import {catchError, of, Subscription, take} from 'rxjs';
-import {SvgService} from '../../services/svg.service';
 import {Diagram} from '../../classes/diagram/diagram';
 import {ExampleFileComponent} from "../example-file/example-file.component";
 import {FileReaderService} from "../../services/file-reader.service";
-import { HttpClient } from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+import {SvgNodeComponent} from "./svg-node/svg-node.component";
 
 @Component({
     selector: 'app-display',
     templateUrl: './display.component.html',
+    imports: [
+        SvgNodeComponent
+    ],
     styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnDestroy {
 
-    @ViewChild('drawingArea') drawingArea: ElementRef<SVGElement> | undefined;
+    readonly fileContent = output<string>();
 
-    @Output('fileContent') fileContent: EventEmitter<string>;
+    readonly diagram = signal<Diagram | undefined>(undefined);
 
     private _sub: Subscription;
-    private _diagram: Diagram | undefined;
 
-    constructor(private _svgService: SvgService,
-                private _displayService: DisplayService,
+    constructor(private _displayService: DisplayService,
                 private _fileReaderService: FileReaderService,
                 private _http: HttpClient) {
 
-        this.fileContent = new EventEmitter<string>();
-
-        this._sub  = this._displayService.diagram$.subscribe(diagram => {
+        this._sub = this._displayService.diagram$.subscribe(diagram => {
             console.log('new diagram');
-
-            this._diagram = diagram;
-            this.draw();
+            this.diagram.set(diagram)
         });
     }
 
     ngOnDestroy(): void {
         this._sub.unsubscribe();
-        this.fileContent.complete();
     }
 
     public processDropEvent(e: DragEvent) {
@@ -59,7 +55,7 @@ export class DisplayComponent implements OnDestroy {
     }
 
     private fetchFile(link: string) {
-        this._http.get(link,{
+        this._http.get(link, {
             responseType: 'text'
         }).pipe(
             catchError(err => {
@@ -86,29 +82,5 @@ export class DisplayComponent implements OnDestroy {
             return;
         }
         this.fileContent.emit(content);
-    }
-
-    private draw() {
-        if (this.drawingArea === undefined) {
-            console.debug('drawing area not ready yet')
-            return;
-        }
-
-        this.clearDrawingArea();
-        const elements = this._svgService.createSvgElements(this._displayService.diagram);
-        for (const element of elements) {
-            this.drawingArea.nativeElement.appendChild(element);
-        }
-    }
-
-    private clearDrawingArea() {
-        const drawingArea = this.drawingArea?.nativeElement;
-        if (drawingArea?.childElementCount === undefined) {
-            return;
-        }
-
-        while (drawingArea.childElementCount > 0) {
-            drawingArea.removeChild(drawingArea.lastChild as ChildNode);
-        }
     }
 }

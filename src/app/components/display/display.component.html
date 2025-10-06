@@ -1,4 +1,8 @@
 <svg #drawingArea class="canvas"
      (drop)="processDropEvent($event)"
      (dragover)="prevent($event)">
+
+    @for (node of diagram()?.nodes; track node.id) {
+        <g SvgNode [diagramNode]="node"/>
+    }
 </svg>

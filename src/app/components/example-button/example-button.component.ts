@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 
 @Component({
     selector: 'app-example-button',
@@ -9,7 +9,8 @@ export class ExampleButtonComponent {
 
     public static readonly META_DATA_CODE = 'drag-file-location';
 
-    @Input() title: string | undefined;
+    readonly title = input<string>();
+    readonly buttonPressed = output();
 
     constructor() {
     }
@@ -32,7 +33,7 @@ export class ExampleButtonComponent {
     }
 
     processMouseClick(e: MouseEvent) {
-        console.log(`Template button "${this.title}" clicked`, e);
+        this.buttonPressed.emit();
     }
 
 }
